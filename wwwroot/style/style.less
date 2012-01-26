@@ -1,0 +1,143 @@
+
+@headerColor: #666; 
+
+body {
+    margin: 0; 
+    padding: 0;
+    font: 14px Lucida Grande,Verdana,Arial,sans-serif;
+
+    // Universal class definitions.  These will be used
+    // across controllers and actions.    
+    .header {
+        clear: both; 
+        margin: 0 auto; 
+        width: 1004px; 
+        padding: 0 10px; height: 42px;
+	    border-bottom: thin solid @headerColor; 
+        
+        .title {
+            float: left; 
+            padding: 11px 3px;
+        }
+    
+        .controls {
+            float: right; 
+            a { 
+                display: inline-block;  
+                padding: 15px 7px 0 7px;  
+                text-decoration: none; 
+                &:hover { text-decoration: underline; }
+                &.highlight { text-decoration: underline; }
+            }
+        }
+    }
+
+    .body {
+        padding: 20px;
+        margin: 10px auto;
+        width: 1000px;
+    }
+
+    .input {
+        text-align: center;
+        padding: 5px; 
+        width: 1000px;
+        input {
+            margin: 0 auto; 
+            padding: 5px;
+            width: 900px; 
+            font-size: 16px;
+        }
+    }
+    .textarea {
+        text-align: center;
+        padding: 5px;
+        width: 1000px;
+        textarea {
+            margin: 0 auto;
+            padding: 5px;
+            width: 900px;
+            height: 300px; 
+        } 
+
+    }
+    .submit {
+        text-align: center;
+        padding: 5px;
+        width: 1000px;
+        input {
+            margin: 0 auto; 
+            padding: 5px;
+            font-size: 16px;
+        }
+    }
+
+    .searchForm {
+        width: 1000px;
+        margin: 0 auto;
+        input {
+            padding: 5px;
+            font-size: 16px;
+            &[type="text"] {
+                width: 900px;
+            }
+        }
+    }
+
+    .paginator {
+        display: block;
+        margin: 25px auto;
+        text-align: center;
+        span {
+            padding: 5px 10px; 
+        }
+    }
+
+    // Site layout.
+    #header {
+        margin-bottom: 50px; 
+        padding: 10px;  
+        #title {
+            color: @headerColor; 
+            a { 
+                color: @headerColor; 
+                text-decoration: none;
+                &:hover {
+                    color: @headerColor;
+                    text-decoration: none;
+                }
+                &:visited {
+                    color: @headerColor;
+                }
+                &:active {
+                    color: @headerColor;
+                } 
+            }
+            
+        }
+        #nav {
+            display: inline-block;
+            float: right;
+        } 
+        border-bottom: thin solid @headerColor;
+    }
+
+    #content {
+        #articleControls {
+            text-align: right; 
+        }  
+    }
+
+    #footer {
+        margin: 50px auto 0px auto;
+        padding: 10px;
+        text-align: center;
+    } 
+
+
+
+    // Controller and Action specific styles.
+
+    
+
+}

@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 14px Lucida Grande, Verdana, Arial, sans-serif;
+}
+body .header {
+  clear: both;
+  margin: 0 auto;
+  width: 1004px;
+  padding: 0 10px;
+  height: 42px;
+  border-bottom: thin solid #666666;
+}
+body .header .title {
+  float: left;
+  padding: 11px 3px;
+}
+body .header .controls {
+  float: right;
+}
+body .header .controls a {
+  display: inline-block;
+  padding: 15px 7px 0 7px;
+  text-decoration: none;
+}
+body .header .controls a:hover {
+  text-decoration: underline;
+}
+body .header .controls a.highlight {
+  text-decoration: underline;
+}
+body .body {
+  padding: 20px;
+  margin: 10px auto;
+  width: 1000px;
+}
+body .input {
+  text-align: center;
+  padding: 5px;
+  width: 1000px;
+}
+body .input input {
+  margin: 0 auto;
+  padding: 5px;
+  width: 900px;
+  font-size: 16px;
+}
+body .textarea {
+  text-align: center;
+  padding: 5px;
+  width: 1000px;
+}
+body .textarea textarea {
+  margin: 0 auto;
+  padding: 5px;
+  width: 900px;
+  height: 300px;
+}
+body .submit {
+  text-align: center;
+  padding: 5px;
+  width: 1000px;
+}
+body .submit input {
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 16px;
+}
+body .searchForm {
+  width: 1000px;
+  margin: 0 auto;
+}
+body .searchForm input {
+  padding: 5px;
+  font-size: 16px;
+}
+body .searchForm input[type="text"] {
+  width: 900px;
+}
+body .paginator {
+  display: block;
+  margin: 25px auto;
+  text-align: center;
+}
+body .paginator span {
+  padding: 5px 10px;
+}
+body #header {
+  margin-bottom: 50px;
+  padding: 10px;
+  border-bottom: thin solid #666666;
+}
+body #header #title {
+  color: #666666;
+}
+body #header #title a {
+  color: #666666;
+  text-decoration: none;
+}
+body #header #title a:hover {
+  color: #666666;
+  text-decoration: none;
+}
+body #header #title a:visited {
+  color: #666666;
+}
+body #header #title a:active {
+  color: #666666;
+}
+body #header #nav {
+  display: inline-block;
+  float: right;
+}
+body #content #articleControls {
+  text-align: right;
+}
+body #footer {
+  margin: 50px auto 0px auto;
+  padding: 10px;
+  text-align: center;
+}

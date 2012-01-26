@@ -1,0 +1,7 @@
+article.article_revision_id => article_revision.id
+
+article_revision.article_id => article.id
+article_revision.visitor_id => visitor.id
+
+article_content.article_revision_id => article_revision.id
+
