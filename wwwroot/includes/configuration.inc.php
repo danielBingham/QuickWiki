@@ -166,20 +166,20 @@
 			 */
 			define('DB_CONNECTION_1', serialize(array(
 				'adapter' => 'MySqli5',
-				'server' => '192.168.1.72',
+				'server' => 'MasterServerIP',
 				'port' => null,
-				'database' => 'wiki',
-				'username' => 'wiki',
-				'password' => 'wiki',
+				'database' => 'MasterDbName',
+				'username' => 'MasterDbUser',
+				'password' => 'MasterDbPassword',
 				'profiling' => false)));
 
             define('DB_CONNECTION_2', serialize(array(
 				'adapter' => 'MySqli5',
-				'server' => '192.168.1.85',
+				'server' => 'SlaveServerIP',
 				'port' => null,
-				'database' => 'wiki',
-				'username' => 'wiki',
-				'password' => 'wiki',
+				'database' => 'SlaveDbName',
+				'username' => 'SlaveDbUser',
+				'password' => 'SlaveDbPassword',
 				'profiling' => false)));
             
 

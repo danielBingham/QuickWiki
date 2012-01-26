@@ -4,4 +4,69 @@ MySQL.  You're free to use any or all of it as you please, however, I don't expe
 it to be useful except as example code.  It is not a feature complete wiki, but
 rather a very basic one.  
 
+Dependencies
+============
 
+The has a number of dependencies.  Obviously, MySQL and PHP are the key ones.  It also
+depends on Memcached.  Make sure you have a working version of it installed.  The
+Memcache portion of the code depends on PHP's native Memcache module, which isn't
+installed by default.  You'll need to install it to get this to work.  You can either
+compile it from source or use pecl to retrieve and install it.   
+
+Structure
+=========
+
+I imposed a more explicit Front Controller based MVC arcitecture on top of Qcubed's
+QForm structure.  Since my last two frameworks have been Zend and CakePHP it was
+a more comfortable and organized structure for me to work in.  To get this set up
+place the code where ever you want, create a symbolic link from your web directory
+to the public directory and make that link a virtual directory in Apache.  
+
+Note, imposing this structure caused some problems in the framework.  Most notably
+with Ajax.  Since I was doing this quickly as a proof of concept, I worked around
+the bugs by always using QServerAction rather than any QAjaxActions.  If I keep
+playing with this I may try and fix that, but making the Ajax work was out of scope
+for me.  
+
+The basic structure should be familiar to anyone who's used a front controller MVC
+framework.  Here the index file itself acts as a very simple front controller.  The
+controller actions are QForms and stored in /wwwroot/controller/<controllerName>/.
+
+The views are stored in /wwwroot/views/<controllerName>/.  Views and Controller actions
+need to be named for what you want to go into the URL not for the class name.  The 
+class name should be the ucfirst() of the action portion of the url appended with
+'Action'.  So, for example, a browse action for the article controller has controller 
+action: 
+
+/wwwroot/controller/article/browse.php
+
+And view:
+
+/wwwroot/views/article/browse.tpl.php
+
+And the class in controller/article/browse.php is defined:
+
+class BrowseAction extends QForm
+
+
+ 
+Services can be found in the /wwwroot/services/ directory.  Filename is the lower
+case version of the service name.  All services must be appended with 'Service'
+in order for the autoloader to find them.  I'll probably change that on a second
+pass to use Zend's naming scheme (so, Service_<Name>). 
+
+The database schema can be found in /data.  There's an sql schema file and a
+relationships.txt file needed by QCubed's code generation.  If you want to 
+perform code generation, use the _devtools_cli version of the generation. I
+removed the web generation tool.  The codegen_settings.xml file is in the
+_devtools_cli directory.  Just pass it explicity to the codegen tool.
+
+Database Setup
+==============
+
+Part of scope for this was working with a master and slave database.  Master handles
+writes, slave handles all reads.  In setting this up, make sure to configure both 
+databases.  If you don't have or don't want that set up, you'll need to do some modifying
+of the code.  It should be a pretty simple modification, in the QApplication class
+in the prepend.inc.php you'll need to edit the getDatabase() method to return the same
+database for both write and read operations.   
